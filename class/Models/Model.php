@@ -73,7 +73,6 @@ abstract class Model
 
         $data[':id'] = $this->id;
 
-
         $db = new \Db();
         $db->execute($sql, $data);
     }
@@ -88,7 +87,7 @@ abstract class Model
 
     public function save()
     {
-        if(self::findOne($this->id) != null)
+        if($this->id)
         {
             $this->update();
         } else

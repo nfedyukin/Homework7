@@ -11,28 +11,22 @@ $newsList = $this->data['newslist'];
     <title>Домашняя работа №7</title>
 </head>
 <body>
-<h1>Административная панель</h1>
+<h1>Новости</h1>
 
-<table border="width=1px">
+
     <?php
     foreach ($newsList as $news)
     {
-        ?>
-        <tr><?php
-            ?><td><?php echo $news->id; ?></td><?php
-            ?><td><?php echo $news->headline; ?></td><?php
-            ?><td>
-                <a href = /Homework7/editnews.php?id=<?php echo $news->id ?>> Изменить </a>
-            </td><?php
-            ?><td>
-                <a href = /Homework7/delnews.php?id=<?php echo $news->id ?>> Удалить </a>
-            </td><?php
-        ?></tr><?php
+        ?><b><?php echo $news->headline; ?></b><br>
+        <?php echo mb_strimwidth( $news->text, 0, 60, "..." ); ?><br><hr>
+        <?php
     }
-    ?>
-</table>
-<br>
-<a href="/Homework7/addnews.php">Добавить новость</a>
+    ?><br>
+
+<i><a href="/Homework7/admin.php">Администратоивная панель</a></i>
+
+
+
 
 </body>
 </html>
